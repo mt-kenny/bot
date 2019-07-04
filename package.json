@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.0.0",
-    "slack": "^11.0.2"
+    "load-json-file": "^6.1.0",
+    "slack": "^11.0.2",
+    "stringify-object": "^3.3.0"
   }
 }
