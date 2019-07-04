@@ -1,11 +1,11 @@
 const MAX_ACTIONS = 5;
 
-const getAttachments = function(list, callbackPrefix, divideLength = MAX_ACTIONS) {
+const getAttachments = function(list, callbackPrefix) {
   const result = [];
   let count = 0;
 
-  for (let i = 0; i < list.length; i += divideLength) {
-    const splitted = list.slice(i, i + divideLength);
+  for (let i = 0; i < list.length; i += MAX_ACTIONS) {
+    const splitted = list.slice(i, i + MAX_ACTIONS);
     const attachment = {
       callback_id: `${callbackPrefix}${count++}`,
       text: '',
@@ -23,19 +23,19 @@ const getAttachments = function(list, callbackPrefix, divideLength = MAX_ACTIONS
   return result;
 }
 
-const getAttachmentsOfCategories = function(list, callbackPrefix, divideLength = MAX_ACTIONS) {
+const getAttachmentsOfCategories = function(list, callbackPrefix, nameKey) {
   const result = [];
   let count = 0;
 
-  for (let i = 0; i < list.length; i += divideLength) {
-    const splitted = list.slice(i, i + divideLength);
+  for (let i = 0; i < list.length; i += MAX_ACTIONS) {
+    const splitted = list.slice(i, i + MAX_ACTIONS);
     const attachment = {
       callback_id: `${callbackPrefix}${count++}`,
       text: '',
       actions: splitted.map(v => ({
         type: 'button',
-        text: v['category_l_name'],
-        name: v['category_l_name'],
+        text: v[nameKey],
+        name: v[nameKey],
         value: v
       }))
     };
