@@ -12,7 +12,8 @@ const getAttachments = function(list, callbackPrefix, divideLength = MAX_ACTIONS
       actions: splitted.map(v => ({
         type: 'button',
         text: v,
-        name: v
+        name: v,
+        value: v
       }))
     };
 
