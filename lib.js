@@ -1,4 +1,6 @@
-const getAttachments = function(list, callbackPrefix, divideLength) {
+const MAX_ACTIONS = 5;
+
+const getAttachments = function(list, callbackPrefix, divideLength = MAX_ACTIONS) {
   const result = [];
   let count = 0;
 
