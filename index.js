@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 const Slack = require('slack');
 const slack = new Slack();
 
 slack.chat.postMessage({
-    token: 'xoxb-684681784485-684686562709-DQ9HAgq3qMVsfwoZpOhTHiXq',
-    channel: 'CL6PZ2B7Y',
+    token: process.env.SLACK_BOT_TOKEN,
+    channel: process.env.SLACK_CHANNEL,
     text: '動物園',
     attachments: [{
         callback_id: 'animals_button',
